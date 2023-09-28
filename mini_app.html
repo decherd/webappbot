@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini App</title>
+</head>
+<body>
+    <div style="margin: 20px;">
+        <!-- Textbox for name input -->
+        <label for="nameInput">Enter your name:</label>
+        <input type="text" id="nameInput" placeholder="Your name" oninput="capitalizeInput(this)">
+
+        <!-- Date picker for birthday -->
+        <label for="birthdayPicker" style="margin-left: 20px;">Select your birthday:</label>
+        <input type="date" id="birthdayPicker">
+    </div>
+
+    <script>
+        function capitalizeInput(inputElement) {
+            // Get current cursor position
+            let cursorPosition = inputElement.selectionStart;
+
+            // Capitalize the input
+            inputElement.value = inputElement.value.toUpperCase();
+
+            // Restore cursor position
+            inputElement.selectionStart = cursorPosition;
+            inputElement.selectionEnd = cursorPosition;
+        }
+    </script>
+</body>
+</html>
